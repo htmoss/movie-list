@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import Movielist from './components/Movielist';
+import Inputmovie from './components/Inputmovie';
+import MovieContextProvider from './context/MovieContext';
+import MovieResults from './components/MovieResults';
+import { BrowserRouter, Route } from 'react-router-dom';
+import About from './components/About';
+import Ratingslist from './components/Ratings/RatingsList';
+import BoxContextProvider from './context/BoxContext';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<BrowserRouter>
+				<MovieContextProvider>
+					<Navbar />
+					<Route exact path='/'>
+						<BoxContextProvider>
+							<Movielist />
+						</BoxContextProvider>
+						<Inputmovie />
+						<MovieResults />
+					</Route>
+					<Route path='/about' component={About} />
+					<Route path='/ratings'>
+						<Ratingslist />
+						<Inputmovie />
+					</Route>
+				</MovieContextProvider>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;
