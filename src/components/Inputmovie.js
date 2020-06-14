@@ -7,7 +7,6 @@ const Inputmovie = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// addMovie(title);
 		searchMovies(title);
 		setTitle('');
 	};

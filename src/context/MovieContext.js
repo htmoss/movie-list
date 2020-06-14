@@ -8,6 +8,9 @@ const KEY = '7d362a01';
 
 const MovieContextProvider = (props) => {
 	const [movieSearchList, setMovieSearchList] = useState([]);
+	const [showInfo, setShowInfo] = useState(false);
+	const [extraInfo, setExtraInfo] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	const [movies, setMovies] = useState(() => {
 		const localData = localStorage.getItem('movies');
@@ -32,11 +35,27 @@ const MovieContextProvider = (props) => {
 	};
 
 	const searchMovies = async (title) => {
+		setLoading(true);
+
 		const res = await axios
 			.get(`https://www.omdbapi.com/?s=${title}&apikey=${KEY}&r=json/`)
 			.catch(console.log('AXIOS ERROR'));
 		console.log(res.data);
 		setMovieSearchList(res.data.Search);
+		setLoading(false);
+	};
+
+	const searchExtraInfo = async (Title) => {
+		setLoading(true);
+
+		const res = await axios
+			.get(`https://www.omdbapi.com/?t=${Title}&apikey=${KEY}&r=json/`)
+			.catch(console.log('AXIOS ERROR'));
+		console.log(res.data);
+		setExtraInfo(res.data);
+		console.log(extraInfo);
+
+		setLoading(false);
 	};
 
 	useEffect(() => {
@@ -57,8 +76,16 @@ const MovieContextProvider = (props) => {
 				deleteRating,
 				setRatings,
 				searchMovies,
+				setLoading,
+				loading,
 				movieSearchList,
 				setMovieSearchList,
+				searchExtraInfo,
+				extraInfo,
+				setExtraInfo,
+				showInfo,
+				setShowInfo,
+				KEY,
 			}}
 		>
 			{props.children}

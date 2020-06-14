@@ -4,6 +4,7 @@ import MovieItem from './MovieItem';
 
 const Movielist = () => {
 	const { movies } = useContext(MovieContext);
+
 	return movies.length ? (
 		<div className='container'>
 			<ul className='movie-list'>

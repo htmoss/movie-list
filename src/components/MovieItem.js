@@ -38,8 +38,14 @@ const MovieItem = ({ movie }) => {
 				{showRateBox && (
 					// Pop up box to rate the movie before it goes to rated list
 					<div>
-						<div className='rating-popup'>
-							<button className='btn' onClick={() => setShowRateBox(false)}>
+						<div className='popup'>
+							<button
+								className='btn'
+								onClick={(e) => {
+									setShowRateBox(false);
+									setScore(1);
+								}}
+							>
 								X
 							</button>
 							<h2>What do you rate this movie?</h2>
