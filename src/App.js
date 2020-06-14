@@ -1,13 +1,11 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import Movielist from './components/Movielist';
-import Inputmovie from './components/Inputmovie';
 import MovieContextProvider from './context/MovieContext';
-import MovieResults from './components/MovieResults';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import About from './components/About';
 import Ratingslist from './components/Ratings/RatingsList';
-import BoxContextProvider from './context/BoxContext';
+import NotFound from './components/pages/NotFound';
+import Home from './components/pages/Home';
 
 function App() {
 	return (
@@ -15,18 +13,12 @@ function App() {
 			<BrowserRouter>
 				<MovieContextProvider>
 					<Navbar />
-					<Route exact path='/'>
-						<BoxContextProvider>
-							<Movielist />
-						</BoxContextProvider>
-						<Inputmovie />
-						<MovieResults />
-					</Route>
-					<Route path='/about' component={About} />
-					<Route path='/ratings'>
-						<Ratingslist />
-						<Inputmovie />
-					</Route>
+					<Switch>
+						<Route exact path='/' component={Home} />
+						<Route exact path='/about' component={About} />
+						<Route exact path='/ratings' component={Ratingslist} />
+						<Route path='*' component={NotFound} />
+					</Switch>
 				</MovieContextProvider>
 			</BrowserRouter>
 		</div>

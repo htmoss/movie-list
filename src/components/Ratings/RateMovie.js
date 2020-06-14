@@ -1,16 +1,14 @@
 import React, { useContext } from 'react';
 import { MovieContext } from '../../context/MovieContext';
-import { BoxContext } from '../../context/BoxContext';
+// import { BoxContext } from '../../context/BoxContext';
 import { v4 as uuidv4 } from 'uuid';
 
 const RateMovie = (movie) => {
-	const { setRatings, deleteMovie, ratings } = useContext(MovieContext);
-	const { showRateBox, setShowRateBox } = useContext(BoxContext);
+	const { setRatings,, ratings } = useContext(MovieContext);
+	// const { showRateBox, setShowRateBox } = useContext(BoxContext);
 
 	const handleSubmit = ({ Title, id }) => {
 		setRatings([...ratings, { Title, id: uuidv4() }]);
-		// deleteMovie(id);
-		// setShowRateBox(false);
 	};
 
 	return (
