@@ -33,7 +33,7 @@ const MovieContextProvider = (props) => {
 
 	const searchMovies = async (title) => {
 		const res = await axios
-			.get(`http://www.omdbapi.com/?s=${title}&apikey=${KEY}&r=json/`)
+			.get(`https://www.omdbapi.com/?s=${title}&apikey=${KEY}&r=json/`)
 			.catch(console.log('AXIOS ERROR'));
 		console.log(res.data);
 		setMovieSearchList(res.data.Search);
