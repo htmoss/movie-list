@@ -3,7 +3,7 @@ import { MovieContext } from '../context/MovieContext';
 import MovieItem from './MovieItem';
 
 const Movielist = () => {
-	const { movies } = useContext(MovieContext);
+	const { movies, isGreyedOut } = useContext(MovieContext);
 
 	return movies.length ? (
 		<div className='container'>
@@ -12,6 +12,7 @@ const Movielist = () => {
 					return <MovieItem movie={movie} key={movie.id} />;
 				})}
 			</ul>
+			<div className={`grey-${isGreyedOut}`}></div>
 		</div>
 	) : (
 		<div className='empty'>No movies to watch!</div>

@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MovieContext } from '../context/MovieContext';
 
-const ExtraInfo = ({ extraInfo, setShowInfo }) => {
+const ExtraInfo = ({ extraInfo }) => {
+	const { setShowInfo, setIsGreyedOut } = useContext(MovieContext);
+	const { Title, Year, Plot, Genre, Rated, Ratings, Runtime } = extraInfo;
+
+	const calcGenre = () => {
+		const genreList = Genre.split(', ');
+		return genreList.map((genre) => <li>{genre}</li>);
+	};
 	return (
 		<div>
 			<div className='popup'>
-				<button className='btn' onClick={() => setShowInfo(false)}>
+				<button
+					className='btn'
+					onClick={() => {
+						setShowInfo(false);
+						setIsGreyedOut('off');
+					}}
+				>
 					x
 				</button>
-				<h1>{extraInfo.Title}</h1>
-				<h4>({extraInfo.Year})</h4>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum animi
-					dolores, dicta quas necessitatibus enim.
-				</p>
+				<h1>{Title}</h1>
+				<h4>({Year})</h4>
+				{/* <p>
+					IMDB: {Ratings[0].Value}, RT: {Ratings[1].Value}
+				</p> */}
+				<p>{Plot}</p>
+				<ul>{calcGenre}</ul>
 			</div>
-			<div className='grey-out'></div>
+			{/* <div className='grey-out'></div> */}
 		</div>
 	);
 };

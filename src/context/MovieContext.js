@@ -11,6 +11,7 @@ const MovieContextProvider = (props) => {
 	const [showInfo, setShowInfo] = useState(false);
 	const [extraInfo, setExtraInfo] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [isGreyedOut, setIsGreyedOut] = useState('off');
 
 	const [movies, setMovies] = useState(() => {
 		const localData = localStorage.getItem('movies');
@@ -46,7 +47,7 @@ const MovieContextProvider = (props) => {
 	};
 
 	const searchExtraInfo = async (Title) => {
-		setLoading(true);
+		// setLoading(true);
 
 		const res = await axios
 			.get(`https://www.omdbapi.com/?t=${Title}&apikey=${KEY}&r=json/`)
@@ -55,7 +56,7 @@ const MovieContextProvider = (props) => {
 		setExtraInfo(res.data);
 		console.log(extraInfo);
 
-		setLoading(false);
+		// setLoading(false);
 	};
 
 	useEffect(() => {
@@ -85,6 +86,8 @@ const MovieContextProvider = (props) => {
 				setExtraInfo,
 				showInfo,
 				setShowInfo,
+				isGreyedOut,
+				setIsGreyedOut,
 				KEY,
 			}}
 		>

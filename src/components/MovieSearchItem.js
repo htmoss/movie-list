@@ -1,8 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { MovieContext } from '../context/MovieContext';
 import ExtraInfo from './ExtraInfo';
-// import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
+// import axios from 'axios';
 
 const MovieSearchItem = ({ movie }) => {
 	const {
@@ -12,6 +11,8 @@ const MovieSearchItem = ({ movie }) => {
 		searchExtraInfo,
 		setShowInfo,
 		showInfo,
+		isGreyedOut,
+		setIsGreyedOut,
 	} = useContext(MovieContext);
 
 	const { Title, Poster } = movie;
@@ -23,6 +24,7 @@ const MovieSearchItem = ({ movie }) => {
 	const handleInfoButton = (e) => {
 		e.preventDefault();
 		searchExtraInfo(movie.Title);
+		setIsGreyedOut('on');
 		setShowInfo(true);
 	};
 
