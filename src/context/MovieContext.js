@@ -57,6 +57,7 @@ const MovieContextProvider = (props) => {
 
 	const clearResults = () => {
 		setMovieSearchList([]);
+		setAlert('');
 		setShowClear(false);
 	};
 

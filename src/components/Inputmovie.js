@@ -15,7 +15,7 @@ const Inputmovie = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (title === '') {
-			setAlert('Please enter something.');
+			setAlert('Please enter a movie title.');
 		} else {
 			console.log('movieSearchList', movieSearchList);
 			setAlert('');
