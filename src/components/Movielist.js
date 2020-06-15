@@ -6,7 +6,7 @@ const Movielist = () => {
 	const { movies, isGreyedOut } = useContext(MovieContext);
 
 	return movies.length ? (
-		<div className='container'>
+		<div>
 			<ul className='movie-list'>
 				{movies.map((movie) => {
 					return <MovieItem movie={movie} key={movie.id} />;

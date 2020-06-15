@@ -25,7 +25,7 @@ const Inputmovie = () => {
 	};
 
 	return (
-		<div className='container' onSubmit={handleSubmit}>
+		<div onSubmit={handleSubmit}>
 			<form className='input-movie-form'>
 				{alert !== '' && (
 					<label className='alert' type='text'>

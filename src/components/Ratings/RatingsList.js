@@ -6,7 +6,7 @@ import RatingItem from './RatingItem';
 const Ratingslist = () => {
 	const { ratings } = useContext(MovieContext);
 	return ratings.length ? (
-		<div className='container'>
+		<div>
 			<ul className='rating-list'>
 				{ratings.map((rating) => {
 					return <RatingItem rating={rating} key={rating.id} />;

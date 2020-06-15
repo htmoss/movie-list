@@ -11,7 +11,7 @@ const MovieResults = () => {
 		return <Spinner />;
 	} else {
 		return (
-			<div className='container'>
+			<div>
 				<ul className='search-results'>
 					{movieSearchList &&
 						movieSearchList.map((movie) => (
