@@ -12,6 +12,11 @@ const MovieContextProvider = (props) => {
 	const [extraInfo, setExtraInfo] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [isGreyedOut, setIsGreyedOut] = useState('off');
+	const [showClear, setShowClear] = useState(false);
+	const [alert, setAlert] = useState('');
+
+	const CancelToken = axios.CancelToken;
+	const source = CancelToken.source();
 
 	const [movies, setMovies] = useState(() => {
 		const localData = localStorage.getItem('movies');
@@ -22,6 +27,21 @@ const MovieContextProvider = (props) => {
 		const localData = localStorage.getItem('ratings');
 		return localData ? JSON.parse(localData) : [];
 	});
+
+	const checkClear = () => {
+		console.log('movieSearchList', movieSearchList);
+		movieSearchList &&
+			(movieSearchList.totalResults !== '0' || movieSearchList === []
+				? setShowClear(true)
+				: setShowClear(false));
+	};
+
+	const addButton = (Title) => {
+		setIsGreyedOut('off');
+		addMovie(Title);
+		setMovieSearchList([]);
+		setShowClear(false);
+	};
 
 	const addMovie = (Title) => {
 		setMovies([...movies, { Title, id: uuidv4(), score: '' }]);
@@ -35,14 +55,35 @@ const MovieContextProvider = (props) => {
 		setRatings(ratings.filter((rating) => rating.id !== id));
 	};
 
+	const clearResults = () => {
+		setMovieSearchList([]);
+		setShowClear(false);
+	};
+
 	const searchMovies = async (title) => {
 		setLoading(true);
 
 		const res = await axios
-			.get(`https://www.omdbapi.com/?s=${title}&apikey=${KEY}&r=json/`)
+			.get(`https://www.omdbapi.com/?s=${title}&apikey=${KEY}&r=json/`, {
+				cancelToken: source.token,
+			})
 			.catch(console.log('AXIOS ERROR'));
 		console.log(res.data);
-		setMovieSearchList(res.data.Search);
+
+		// filters out all non-movies from list
+		if (res.data.Response === 'True') {
+			const filteredSearch = res.data.Search.filter(
+				(movie) => movie.Type === 'movie' || movie.Type === 'series'
+			);
+			setMovieSearchList(filteredSearch);
+		} else {
+			let errorMessage = res.data.Error;
+			if (errorMessage === 'Too many results.') {
+				errorMessage = 'Too many results. Please narrow down your search.';
+			}
+			setAlert(errorMessage);
+		}
+		checkClear();
 		setLoading(false);
 	};
 
@@ -50,7 +91,9 @@ const MovieContextProvider = (props) => {
 		// setLoading(true);
 
 		const res = await axios
-			.get(`https://www.omdbapi.com/?t=${Title}&apikey=${KEY}&r=json/`)
+			.get(`https://www.omdbapi.com/?t=${Title}&apikey=${KEY}&r=json/`, {
+				cancelToken: source.token,
+			})
 			.catch(console.log('AXIOS ERROR'));
 		console.log(res.data);
 		setExtraInfo(res.data);
@@ -88,6 +131,13 @@ const MovieContextProvider = (props) => {
 				setShowInfo,
 				isGreyedOut,
 				setIsGreyedOut,
+				showClear,
+				setShowClear,
+				alert,
+				setAlert,
+				checkClear,
+				clearResults,
+				addButton,
 				KEY,
 			}}
 		>

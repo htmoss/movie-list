@@ -10,7 +10,9 @@ const Home = () => {
 			<BoxContextProvider>
 				<Movielist />
 			</BoxContextProvider>
+
 			<Inputmovie />
+
 			<MovieResults />
 		</Fragment>
 	);

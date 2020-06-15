@@ -5,21 +5,15 @@ import ExtraInfo from './ExtraInfo';
 
 const MovieSearchItem = ({ movie }) => {
 	const {
-		addMovie,
-		setMovieSearchList,
 		extraInfo,
 		searchExtraInfo,
 		setShowInfo,
 		showInfo,
-		isGreyedOut,
 		setIsGreyedOut,
+		addButton,
 	} = useContext(MovieContext);
 
 	const { Title, Poster } = movie;
-	const handleAddButton = (movie) => {
-		addMovie(movie.Title);
-		setMovieSearchList([]);
-	};
 
 	const handleInfoButton = (e) => {
 		e.preventDefault();
@@ -35,7 +29,7 @@ const MovieSearchItem = ({ movie }) => {
 			<button className='btn info-btn' onClick={handleInfoButton}>
 				More Info
 			</button>
-			<button className='btn add-btn' onClick={() => handleAddButton(movie)}>
+			<button className='btn add-btn' onClick={() => addButton(Title)}>
 				Add
 			</button>
 			<div>
