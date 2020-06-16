@@ -7,6 +7,8 @@
 body {
   margin: 0;
   padding: 0;
+  background: #555;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,11 +32,16 @@ a {
 .navbar {
   display: flex;
   flex-direction: column;
+  background: #ffcfcf;
+  color: #000;
+  background: #fff1f1;
   text-align: center;
 }
 
 .navbar h1 {
   padding: 1rem 0;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
 }
 
 .navbar p {
@@ -46,9 +53,11 @@ a {
 }
 
 .navbar .page-list-bar {
-  background-color: #ddd;
+  background: #ffcfcf;
   width: 100%;
   margin: auto;
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 1.5rem;
 }
 
 .navbar .page-list {
@@ -59,7 +68,6 @@ a {
 
 .navbar a {
   padding: 1rem 2rem;
-  background-color: #ddd;
   color: black;
 }
 
@@ -67,25 +75,20 @@ a {
   background-color: #ccc;
 }
 
-.about h1 {
-  margin: 2rem 0 0.5rem 0;
+.about p {
+  margin-left: 1rem;
 }
 
 .movie-list,
 .rating-list {
-  padding: 2rem 0;
-  margin-block-end: 0;
-  margin-block-start: 0;
+  margin: 1rem 0;
   padding-inline-start: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.rating-list {
-  background: #eee;
+  border-radius: 15px;
 }
 
 .movie-item,
@@ -93,7 +96,10 @@ a {
   display: grid;
   grid-template-columns: 5fr 1fr;
   width: 100%;
-  padding: 1rem;
+  margin: 0.3rem;
+  padding: 0.8rem;
+  background: #444;
+  border-radius: 15px;
 }
 
 .movie-item .list-item-text,
@@ -113,6 +119,7 @@ a {
   font-size: 1.2rem;
   font-weight: bold;
   text-align: left;
+  font-family: 'Jua', sans-serif;
 }
 
 .movie-item .list-buttons,
@@ -126,16 +133,18 @@ a {
 .movie-item .check,
 .rating-item .delete,
 .rating-item .check {
+  color: #cfcfcf;
   cursor: pointer;
   width: 40px;
   height: 40px;
-  background-color: #ddd;
+  background-color: #555;
   border-radius: 30px;
   text-align: center;
   margin-left: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .movie-item .delete svg,
@@ -149,7 +158,9 @@ a {
 .movie-item .check:hover,
 .rating-item .delete:hover,
 .rating-item .check:hover {
-  background: #ccc;
+  background: #666666;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .movie-item .delete:active,
@@ -194,7 +205,7 @@ a {
   top: 0;
   left: 0;
   background: #000;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .grey-off {
@@ -240,8 +251,9 @@ a {
 .search-results {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 4rem;
   text-align: center;
+  color: #333;
 }
 
 .alert {
@@ -254,11 +266,13 @@ a {
 }
 
 .search-item {
+  border-radius: 30px;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #eee;
+  background: #fff;
   padding: 1.5rem;
 }
 
@@ -271,7 +285,7 @@ a {
   font-size: 1rem;
   border-radius: 10px;
   color: #fff;
-  background: coral;
+  background: #fb363f;
   border: none;
   transition: all 0.1s ease;
   padding: 0.8rem 2rem;
@@ -288,14 +302,30 @@ a {
   margin: 1rem auto;
 }
 
+.btn-info {
+  border-radius: 50%;
+  padding: 0.2rem 1.1rem;
+  font-size: 3rem;
+  position: relative;
+  left: 160px;
+  top: -60px;
+  font-weight: bold;
+}
+
 .footer {
   position: relative;
   width: 100%;
   bottom: 0;
-  background-color: coral;
+  background-color: #fb363f;
   color: #fff;
   text-align: center;
   padding: 0.5rem 0;
   margin-top: 3rem;
+}
+
+.page-title {
+  margin: 3rem 0 0 1rem;
+  font-family: 'Baloo Chettan 2', cursive;
+  font-weight: 800;
 }
 /*# sourceMappingURL=index.css.map */

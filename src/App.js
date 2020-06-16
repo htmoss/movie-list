@@ -3,9 +3,9 @@ import Navbar from './components/Navbar';
 import MovieContextProvider from './context/MovieContext';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import About from './components/About';
-import Ratingslist from './components/Ratings/RatingsList';
 import NotFound from './components/pages/NotFound';
 import Home from './components/pages/Home';
+import Ratings from './components/pages/Ratings';
 import Footer from './components/Layout/Footer';
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
 					<div className='container'>
 						<Switch>
 							<Route exact path='/' component={Home} />
+							<Route exact path='/ratings' component={Ratings} />
 							<Route exact path='/about' component={About} />
-							<Route exact path='/ratings' component={Ratingslist} />
 							<Route path='*' component={NotFound} />
 						</Switch>
 					</div>

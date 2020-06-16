@@ -14,10 +14,10 @@ const Navbar = () => {
 			<div className='page-list-bar'>
 				<ul className='page-list'>
 					<li>
-						<NavLink to='/'>To-Watch List</NavLink>
+						<NavLink to='/'>Watch List</NavLink>
 					</li>
 					<li>
-						<NavLink to='/ratings'>Ratings List</NavLink>
+						<NavLink to='/ratings'>Rating List</NavLink>
 					</li>
 					<li>
 						<NavLink to='/about'>About</NavLink>

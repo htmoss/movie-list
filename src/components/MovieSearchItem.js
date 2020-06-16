@@ -25,10 +25,10 @@ const MovieSearchItem = ({ movie }) => {
 	return (
 		<div className='search-item'>
 			<h2>{Title}</h2>
-			{Poster !== 'N/A' && <img src={Poster} alt={Title} />}
-			<button className='btn info-btn' onClick={handleInfoButton}>
-				More Info
+			<button className='btn btn-info' onClick={handleInfoButton}>
+				+
 			</button>
+			{Poster !== 'N/A' && <img src={Poster} alt={Title} />}
 			<button className='btn add-btn' onClick={() => addButton(Title)}>
 				Add
 			</button>
