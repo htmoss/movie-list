@@ -173,8 +173,8 @@ a {
 }
 
 .popup {
-  width: 600px;
-  height: 700px;
+  width: 601px;
+  height: 701px;
   background: #ffcfcf;
   z-index: 7;
   position: fixed;
