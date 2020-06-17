@@ -1,0 +1,82 @@
+@media (max-width: 1200px) {
+	.search-item {
+		width: 231px;
+		height: 350px;
+	}
+	.search-results {
+		gap: 2rem 4rem;
+	}
+
+	.search-box-shadow {
+		opacity: 1;
+	}
+	.btn-add {
+		transform: scale(1);
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+@media (max-width: 950px) {
+	.search-results {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.search-title {
+		font-size: 0.8rem;
+		padding: 1rem 1.5rem;
+	}
+}
+@media (max-width: 650px) {
+	.search-results {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.search-title {
+		font-size: 0.8rem;
+	}
+	.page-list {
+		flex-direction: column;
+		padding: 0.4rem 0 !important;
+	}
+	.navbar {
+		li {
+			margin: 0.1rem 0;
+		}
+	}
+	.popup {
+		width: 400px;
+		height: 700px;
+		margin-left: -200px;
+		margin-top: -325px;
+	}
+	.popup-info-and-img {
+		flex-direction: column;
+	}
+
+	.popup-top-info h1 {
+		font-size: 1.5rem;
+	}
+
+	.popup-rating,
+	.popup-runtime,
+	.popup-imdb,
+	.popup-genre {
+		margin-top: 0.5rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.popup-info {
+		margin: auto;
+	}
+
+	.popup-img {
+		width: 173px;
+		height: 263px;
+		margin: auto;
+	}
+
+	.btn-back {
+		top: 30rem;
+	}
+}

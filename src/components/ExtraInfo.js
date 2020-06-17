@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { MovieContext } from '../context/MovieContext';
+import Poster_not_available from './poster_not_available.png';
 
 const ExtraInfo = ({ extraInfo }) => {
 	const { setShowInfo, setIsGreyedOut, addButton } = useContext(MovieContext);
@@ -17,26 +18,40 @@ const ExtraInfo = ({ extraInfo }) => {
 	return (
 		<div>
 			<div className='popup'>
+				<div className='popup-top-info'>
+					<h1>
+						{Title} ({Year})
+					</h1>
+				</div>
+				<div className='popup-info-and-img'>
+					<img
+						className='popup-img'
+						src={Poster === 'N/A' ? Poster_not_available : Poster}
+						alt={Title}
+					/>
+					<div className='popup-info'>
+						<button
+							className='btn btn-back'
+							onClick={() => {
+								setShowInfo(false);
+								setIsGreyedOut('off');
+							}}
+						>
+							<div className='x'>x</div>
+						</button>
+						<div className='popup-plot'>
+							<p>{Plot !== 'N/A' ? Plot : null}</p>
+						</div>
+						<h4 className='popup-rating'>{Rated}</h4>
+						<h4 className='popup-runtime'>{Runtime}</h4>
+						<div className='popup-imdb'>
+							{Ratings && <h4>IMDB: {Ratings[0].Value}</h4>}
+						</div>
+						{/* <div className='popup-genre'>{Genre}</div> */}
+					</div>
+				</div>
 				<button
-					className='btn'
-					onClick={() => {
-						setShowInfo(false);
-						setIsGreyedOut('off');
-					}}
-				>
-					x
-				</button>
-				{Poster !== 'N/A' && <img src={Poster} alt={Title} />}
-				<h1>{Title}</h1>
-				<h4>({Year})</h4>
-				<h4>
-					{Runtime} | Rated: {Rated}
-				</h4>
-				<div>{Ratings && <p>IMDB: {Ratings[0].Value}</p>}</div>
-				<p>{Plot !== 'N/A' ? Plot : null}</p>
-				<div>{Genre}</div>
-				<button
-					className='btn'
+					className='btn popup-add'
 					onClick={() => {
 						addButton(Title);
 					}}
