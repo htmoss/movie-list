@@ -9,7 +9,7 @@ const ExtraInfo = ({ extraInfo }) => {
 		Poster,
 		Year,
 		Plot,
-		Genre,
+		// Genre,
 		Rated,
 		Ratings,
 		Runtime,
