@@ -1,8 +1,4 @@
 import React, { Fragment } from 'react';
-// import BoxContextProvider from '../../context/BoxContext';
-// import Movielist from '../Movielist';
-// import Inputmovie from '../Inputmovie';
-// import MovieResults from '../MovieResults';
 import Ratingslist from '../Ratings/RatingsList';
 
 const Ratings = () => {

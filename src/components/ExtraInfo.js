@@ -42,10 +42,12 @@ const ExtraInfo = ({ extraInfo }) => {
 						<div className='popup-plot'>
 							<p>{Plot !== 'N/A' ? Plot : null}</p>
 						</div>
-						<h4 className='popup-rating'>{Rated}</h4>
-						<h4 className='popup-runtime'>{Runtime}</h4>
-						<div className='popup-imdb'>
-							{Ratings && <h4>IMDB: {Ratings[0].Value}</h4>}
+						<div className='popup-buttons'>
+							<h4 className='popup-rating'>{Rated}</h4>
+							<h4 className='popup-runtime'>{Runtime}</h4>
+							<div className='popup-imdb'>
+								{Ratings && <h4>IMDB: {Ratings[0].Value}</h4>}
+							</div>
 						</div>
 						{/* <div className='popup-genre'>{Genre}</div> */}
 					</div>

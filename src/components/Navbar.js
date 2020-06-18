@@ -7,7 +7,7 @@ const Navbar = () => {
 	return (
 		<div className='navbar'>
 			<h1>Movie List</h1>
-			<h4>Make a list of movies, watch them, and rate them!</h4>
+			<h4>Make a movie list, watch them, and rate them!</h4>
 			<p>
 				Movies to watch: {movies.length} | Movies rated: {ratings.length}
 			</p>

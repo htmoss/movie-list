@@ -9,7 +9,7 @@ body {
   padding: 0;
   background: #555;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,6 +42,10 @@ a {
   font-family: 'Pacifico', cursive;
   font-size: 2.5rem;
   color: #fb363f;
+}
+
+.navbar h4 {
+  padding: 0 2rem;
 }
 
 .navbar p {
@@ -173,15 +177,15 @@ a {
 }
 
 .popup {
-  width: 601px;
-  height: 701px;
+  width: 600px;
+  height: 700px;
   background: #ffcfcf;
   z-index: 7;
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-left: -250px;
-  margin-top: -300px;
+  margin-left: -300px;
+  margin-top: -350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,6 +224,25 @@ a {
 }
 
 .popup-rating {
+  grid-area: rating;
+}
+
+.popup-runtime {
+  grid-area: runtime;
+}
+
+.popup-imdb {
+  grid-area: imdb;
+}
+
+.popup-buttons {
+  margin: 0 auto;
+  display: grid;
+  gap: 0.2rem;
+  grid-template-areas: 'rating runtime' 'imdb imdb';
+}
+
+.popup-rating {
   margin-top: 0.3rem;
   font-size: 1rem;
   color: #fb363f;
@@ -254,24 +277,22 @@ a {
   top: 0;
   left: 0;
   background: #000;
-  opacity: 0.3;
+  opacity: 0;
 }
 
 .grey-on {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
   background: #000;
-  opacity: 0.5;
+  opacity: 0.7;
   z-index: 6;
 }
 
 .grey-off {
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
   background: #000;
@@ -505,35 +526,65 @@ a {
     margin: 0.1rem 0;
   }
   .popup {
-    width: 400px;
-    height: 700px;
-    margin-left: -200px;
-    margin-top: -325px;
+    width: 250px;
+    height: 500px;
+    margin-left: -125px;
+    margin-top: -250px;
+    padding: 0.5rem 1rem;
   }
   .popup-info-and-img {
     flex-direction: column;
   }
   .popup-top-info h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .popup-rating,
   .popup-runtime,
   .popup-imdb,
   .popup-genre {
-    margin-top: 0.5rem;
+    font-size: 0.5rem;
+    margin-top: 0rem;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+  }
+  .popup-rating {
+    grid-area: rating;
+  }
+  .popup-runtime {
+    grid-area: runtime;
+  }
+  .popup-imdb {
+    grid-area: imdb;
+  }
+  .popup-plot {
+    font-size: 0.7rem;
+    height: 8rem;
+    margin: 0.5rem 0;
+  }
+  .popup-add {
+    font-size: 0.8rem;
+    width: 70%;
+  }
+  .btn-back {
+    font-size: 2rem;
+    padding: 0.3rem 0.9rem;
+    right: -25px;
+    top: 400px;
+  }
+  .popup-buttons {
+    margin: auto;
+    display: grid;
+    gap: 0.2rem;
+    grid-template-areas: 'rating runtime' 'imdb imdb';
   }
   .popup-info {
     margin: auto;
   }
   .popup-img {
-    width: 173px;
-    height: 263px;
+    width: 100px;
+    height: 152px;
     margin: auto;
-  }
-  .btn-back {
-    top: 30rem;
   }
 }
 /*# sourceMappingURL=index.css.map */

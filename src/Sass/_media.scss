@@ -44,26 +44,65 @@
 		}
 	}
 	.popup {
-		width: 400px;
-		height: 700px;
-		margin-left: -200px;
-		margin-top: -325px;
+		width: 250px;
+		height: 500px;
+		margin-left: -125px;
+		margin-top: -250px;
+		padding: 0.5rem 1rem;
 	}
 	.popup-info-and-img {
 		flex-direction: column;
 	}
-
 	.popup-top-info h1 {
-		font-size: 1.5rem;
+		font-size: 1rem;
 	}
 
 	.popup-rating,
 	.popup-runtime,
 	.popup-imdb,
 	.popup-genre {
-		margin-top: 0.5rem;
+		font-size: 0.5rem;
+		margin-top: 0rem;
 		margin-left: auto;
 		margin-right: auto;
+		width: 100%;
+	}
+	.popup-rating {
+		grid-area: rating;
+		// margin-right: .5rem;
+	}
+	.popup-runtime {
+		grid-area: runtime;
+	}
+	.popup-imdb {
+		grid-area: imdb;
+	}
+	.popup-plot {
+		font-size: 0.7rem;
+		height: 8rem;
+		margin: 0.5rem 0;
+	}
+
+	.popup-add {
+		font-size: 0.8rem;
+		width: 70%;
+	}
+
+	.btn-back {
+		font-size: 2rem;
+		padding: 0.3rem 0.9rem;
+		right: -25px;
+		top: 400px;
+	}
+
+	.popup-buttons {
+		margin: auto;
+		display: grid;
+		gap: 0.2rem;
+		// grid-template-rows: auto;
+		grid-template-areas:
+			'rating runtime'
+			'imdb imdb';
 	}
 
 	.popup-info {
@@ -71,12 +110,8 @@
 	}
 
 	.popup-img {
-		width: 173px;
-		height: 263px;
+		width: 100px;
+		height: 152px;
 		margin: auto;
-	}
-
-	.btn-back {
-		top: 30rem;
 	}
 }

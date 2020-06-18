@@ -7,12 +7,12 @@ const Movielist = () => {
 
 	return movies.length ? (
 		<div>
+			<div className={`grey-${isGreyedOut}`}></div>
 			<ul className='movie-list'>
 				{movies.map((movie) => {
 					return <MovieItem movie={movie} key={movie.id} />;
 				})}
 			</ul>
-			<div className={`grey-${isGreyedOut}`}></div>
 		</div>
 	) : (
 		<div className='empty'>No movies to watch!</div>
