@@ -67,13 +67,15 @@ a {
 		font-size: 1.5rem;
 	}
 	.page-list {
-		padding: 1rem 0;
+		padding: 0 1rem;
+		margin: 1rem 0;
 		display: flex;
 		justify-content: center;
 	}
 	a {
-		// padding: 1rem 2rem;
-		margin: 0 2rem;
+		padding: 1rem 2rem;
+		margin: 0;
+		height: 100%;
 		// background-color: #ddd;
 		color: #fff;
 		text-align: center;
@@ -114,13 +116,6 @@ a {
 	background: #444;
 	border-radius: 15px;
 
-	// &:first-child {
-	// 	border-radius: 15px 15px 0 0;
-	// }
-	// &:last-child {
-	// 	border-radius: 0 0 15px 15px;
-	// }
-
 	.list-item-text {
 		margin: auto 0;
 		display: flex;
@@ -136,8 +131,6 @@ a {
 		font-weight: bold;
 		text-align: left;
 		font-family: 'Jua', sans-serif;
-
-		// margin: auto;
 	}
 	.list-buttons {
 		display: flex;

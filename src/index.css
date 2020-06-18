@@ -9,7 +9,7 @@ body {
   padding: 0;
   background: #555;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -65,13 +65,16 @@ a {
 }
 
 .navbar .page-list {
-  padding: 1rem 0;
+  padding: 0 1rem;
+  margin: 1rem 0;
   display: flex;
   justify-content: center;
 }
 
 .navbar a {
-  margin: 0 2rem;
+  padding: 1rem 2rem;
+  margin: 0;
+  height: 100%;
   color: #fff;
   text-align: center;
   transition: 0.1s all ease;
@@ -239,7 +242,7 @@ a {
   margin: 0 auto;
   display: grid;
   gap: 0.2rem;
-  grid-template-areas: 'rating runtime' 'imdb imdb';
+  grid-template-areas: 'rating runtime' 'imdb imdb';
 }
 
 .popup-rating {
@@ -576,7 +579,7 @@ a {
     margin: auto;
     display: grid;
     gap: 0.2rem;
-    grid-template-areas: 'rating runtime' 'imdb imdb';
+    grid-template-areas: 'rating runtime' 'imdb imdb';
   }
   .popup-info {
     margin: auto;
