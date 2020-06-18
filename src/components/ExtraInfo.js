@@ -55,6 +55,7 @@ const ExtraInfo = ({ extraInfo }) => {
 				<button
 					className='btn popup-add'
 					onClick={() => {
+						setShowInfo(false);
 						addButton(Title);
 					}}
 				>
