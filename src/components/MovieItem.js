@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { MovieContext } from '../context/MovieContext';
 import { BoxContext } from '../context/BoxContext';
 import { AiFillDelete } from 'react-icons/ai';
