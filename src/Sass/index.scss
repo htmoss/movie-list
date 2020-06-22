@@ -58,31 +58,34 @@ a {
 	ul {
 		padding-inline-start: 0;
 	}
+	i {
+		// margin: auto;
+		padding-top: 0.5rem;
+		display: flex;
+		align-items: center;
+		span {
+			padding-left: 0.2rem;
+		}
+	}
 	.page-list-bar {
 		background: $primary;
-
 		width: 100%;
-		margin: auto;
 		font-family: 'Baloo Chettan 2', cursive;
 		font-size: 1.5rem;
+		height: 3rem;
 	}
 	.page-list {
-		padding: 0 1rem;
-		margin: 1rem 0;
 		display: flex;
-		justify-content: center;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.active {
+		color: $secondary-dark !important;
 	}
 	a {
-		padding: 1rem 2rem;
-		margin: 0;
-		height: 100%;
-		// background-color: #ddd;
 		color: #fff;
 		text-align: center;
 		transition: 0.1s all ease;
-		// &:hover {
-		// 	background-color: $primary-dark;
-		// }
 	}
 }
 

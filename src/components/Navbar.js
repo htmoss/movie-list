@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { MovieContext } from '../context/MovieContext';
 import { NavLink } from 'react-router-dom';
-import { MdMovie, MdInfo } from 'react-icons/md';
-import { RiMovie2Line } from 'react-icons/ri';
+import { MdMovie, MdInfo, MdStarHalf } from 'react-icons/md';
 
 const Navbar = () => {
 	const { movies, ratings } = useContext(MovieContext);
@@ -26,7 +25,7 @@ const Navbar = () => {
 					<li>
 						<NavLink to='/ratings'>
 							<i>
-								<RiMovie2Line />
+								<MdStarHalf />
 								<span>Ratings</span>
 							</i>
 						</NavLink>
