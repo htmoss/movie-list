@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { MovieContext } from '../context/MovieContext';
 import { NavLink } from 'react-router-dom';
+import { MdMovie, MdInfo } from 'react-icons/md';
+import { RiMovie2Line } from 'react-icons/ri';
 
 const Navbar = () => {
 	const { movies, ratings } = useContext(MovieContext);
@@ -14,13 +16,28 @@ const Navbar = () => {
 			<div className='page-list-bar'>
 				<ul className='page-list'>
 					<li>
-						<NavLink to='/'>Watch List</NavLink>
+						<NavLink exact={true} to='/'>
+							<i>
+								<MdMovie />
+								<span>List</span>
+							</i>
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/ratings'>Rating List</NavLink>
+						<NavLink to='/ratings'>
+							<i>
+								<RiMovie2Line />
+								<span>Ratings</span>
+							</i>
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/about'>About</NavLink>
+						<NavLink to='/about'>
+							<i>
+								<MdInfo />
+								<span>About</span>
+							</i>
+						</NavLink>
 					</li>
 				</ul>
 			</div>
