@@ -63,9 +63,9 @@
 		}
 		i {
 			margin: auto;
-			margin-top: 0.5rem;
+			margin-top: 0.4rem;
 			span {
-				font-size: 0.7rem;
+				font-size: 0.9rem;
 				padding: 0rem;
 			}
 			padding: 0 2.5rem;
@@ -83,6 +83,12 @@
 			margin: 0.1rem 0;
 		}
 	}
+	.page-title {
+		margin: 0;
+		margin-top: 3rem;
+		text-align: center;
+	}
+
 	.popup {
 		width: 250px;
 		height: 500px;
@@ -153,5 +159,9 @@
 		width: 100px;
 		height: 152px;
 		margin: auto;
+	}
+	.footer {
+		bottom: 50px !important;
+		z-index: 100000;
 	}
 }
