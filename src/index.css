@@ -187,6 +187,7 @@ a {
 }
 
 .popup {
+  color: #333;
   width: 600px;
   height: 700px;
   background: #ffcfcf;
@@ -387,7 +388,6 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 4rem;
   text-align: center;
-  color: #333;
 }
 
 .search-title-and-item {
@@ -437,7 +437,8 @@ a {
   border-radius: inherit;
 }
 
-.search-box-shadow {
+.search-box-shadow,
+.poster-box-shadow {
   opacity: 0;
   background: black;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
@@ -446,6 +447,10 @@ a {
   position: absolute;
   border-radius: inherit;
   transition: all 0.2s ease;
+}
+
+.poster-box-shadow {
+  opacity: 1;
 }
 
 .btn {
@@ -505,7 +510,7 @@ a {
   position: relative;
   width: 100%;
   bottom: 0;
-  background-color: #fb363f;
+  background-color: #bb242c;
   color: #fff;
   text-align: center;
   padding: 0.5rem 0;
@@ -516,6 +521,32 @@ a {
   margin: 3rem 0 0 1rem;
   font-family: 'Baloo Chettan 2', cursive;
   font-weight: 800;
+}
+
+.poster-score {
+  position: absolute;
+  bottom: 2rem;
+  z-index: 3;
+  background: #fb363f;
+  border-radius: 20px;
+  padding: 0.7rem 1rem;
+}
+
+.poster-delete {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 3;
+  background: #333;
+  padding: 0.8rem 0.9rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.poster-delete:hover {
+  background: #666666;
+  color: #fff;
 }
 
 @media (max-width: 1200px) {
@@ -665,8 +696,7 @@ a {
     margin: auto;
   }
   .footer {
-    bottom: 50px !important;
-    z-index: 100000;
+    bottom: 45px !important;
   }
 }
 /*# sourceMappingURL=index.css.map */

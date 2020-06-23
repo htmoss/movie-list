@@ -36,15 +36,15 @@ const MovieContextProvider = (props) => {
 				: setShowClear(false));
 	};
 
-	const addButton = (Title) => {
+	const addButton = (Title, Poster) => {
 		setIsGreyedOut('off');
-		addMovie(Title);
+		addMovie(Title, Poster);
 		setMovieSearchList([]);
 		setShowClear(false);
 	};
 
-	const addMovie = (Title) => {
-		setMovies([...movies, { Title, id: uuidv4(), score: '' }]);
+	const addMovie = (Title, Poster) => {
+		setMovies([...movies, { Title, id: uuidv4(), score: '', Poster }]);
 	};
 
 	const deleteMovie = (id) => {
