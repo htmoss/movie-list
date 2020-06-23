@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { MovieContext } from '../context/MovieContext';
+import React from 'react';
+// import { MovieContext } from '../context/MovieContext';
 import { NavLink } from 'react-router-dom';
 import { MdMovie, MdInfo, MdStarHalf } from 'react-icons/md';
 
 const Navbar = () => {
-	const { movies, ratings } = useContext(MovieContext);
+	// const { movies, ratings } = useContext(MovieContext);
 	return (
 		<div className='navbar'>
 			<h1>Movie List</h1>

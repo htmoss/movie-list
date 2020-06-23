@@ -1,9 +1,6 @@
 import React, { useContext } from 'react';
 import { MovieContext } from '../../context/MovieContext';
 import { AiFillDelete } from 'react-icons/ai';
-// import { GoCheck } from 'react-icons/go';
-
-// const KEY = '7d362a01';
 
 const RatingItem = ({ rating }) => {
 	const { deleteRating } = useContext(MovieContext);

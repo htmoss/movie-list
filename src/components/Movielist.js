@@ -11,9 +11,9 @@ const Movielist = () => {
 	const { showRateBox, setShowRateBox } = useContext(BoxContext);
 	const [score, setScore] = useState(1);
 
-	const handleSubmit = ({ Title, id }) => {
+	const handleSubmit = ({ Title, id, Poster }) => {
 		// setScore(e.target.value);
-		const newMovie = { Title, id: uuidv4(), score };
+		const newMovie = { Title, id: uuidv4(), score, Poster };
 		// console.log(newMovie);
 		setRatings([...ratings, newMovie]);
 		deleteMovie(id);

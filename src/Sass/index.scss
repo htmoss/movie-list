@@ -173,6 +173,7 @@ a {
 }
 
 .popup {
+	color: #333;
 	width: 600px;
 	height: 700px;
 	background: $secondary;
@@ -371,7 +372,6 @@ a {
 	grid-template-columns: repeat(3, 1fr);
 	gap: 2rem 4rem;
 	text-align: center;
-	color: #333;
 }
 
 .search-title-and-item {
@@ -388,6 +388,7 @@ a {
 
 .search-item {
 	// border-radius: 30px;
+
 	border-radius: 10px;
 	box-shadow: 0px 8px 20px 0px rgba($color: #000000, $alpha: 0.3);
 	display: flex;
@@ -421,7 +422,8 @@ a {
 	border-radius: inherit;
 }
 
-.search-box-shadow {
+.search-box-shadow,
+.poster-box-shadow {
 	opacity: 0;
 	background: rgb(0, 0, 0);
 	background: linear-gradient(
@@ -434,6 +436,10 @@ a {
 	position: absolute;
 	border-radius: inherit;
 	transition: all 0.2s ease;
+}
+
+.poster-box-shadow {
+	opacity: 1;
 }
 
 .btn {
@@ -491,7 +497,7 @@ a {
 	position: relative;
 	width: 100%;
 	bottom: 0;
-	background-color: $primary;
+	background-color: $primary-dark;
 	color: #fff;
 	text-align: center;
 	padding: 0.5rem 0;
@@ -502,6 +508,32 @@ a {
 	margin: 3rem 0 0 1rem;
 	font-family: 'Baloo Chettan 2', cursive;
 	font-weight: 800;
+}
+
+.poster-score {
+	position: absolute;
+	// left: 2rem;
+	bottom: 2rem;
+	z-index: 3;
+	background: $primary;
+	border-radius: 20px;
+	padding: 0.7rem 1rem;
+}
+.poster-delete {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	z-index: 3;
+	background: #333;
+	padding: 0.8rem 0.9rem;
+	border-radius: 30px;
+	transition: all 0.3s ease;
+	text-align: center;
+	&:hover {
+		background: #666666;
+		color: #fff;
+		// transform: scale(1.05);
+	}
 }
 
 @import 'media';

@@ -1,23 +1,32 @@
 import React, { useContext } from 'react';
 import { MovieContext } from '../../context/MovieContext';
-// import MovieItem from '../MovieItem';
+import { PosterToggleContext } from '../../context/PosterToggleContext';
 import RatingItem from './RatingItem';
+import RatingPoster from './RatingPoster';
 
 const Ratingslist = () => {
 	const { ratings } = useContext(MovieContext);
+	const { showPosters } = useContext(PosterToggleContext);
 	return ratings.length ? (
 		<div>
-			<ul className='rating-list'>
-				{ratings.map((rating) => {
-					return <RatingItem rating={rating} key={rating.id} />;
-				})}
-			</ul>
+			{showPosters ? (
+				<ul className='rating-poster-list'>
+					{ratings.map((rating) => {
+						return <RatingPoster rating={rating} key={rating.id} />;
+					})}
+				</ul>
+			) : (
+				<ul className='rating-list'>
+					{ratings.map((rating) => {
+						return <RatingItem rating={rating} key={rating.id} />;
+					})}
+				</ul>
+			)}
 		</div>
 	) : (
 		<div className='empty'>
-			None here yet.
+			You haven't rated any movies yet.
 			<br />
-			Go rate some movies!
 		</div>
 	);
 };
