@@ -365,7 +365,8 @@ a {
 	margin: 1rem 0;
 }
 
-.search-results {
+.search-results,
+.rating-poster-list {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 2rem 4rem;
@@ -449,8 +450,12 @@ a {
 	transition: all 0.1s ease;
 	padding: 0.8rem 2rem;
 	margin: 0.2rem;
+	cursor: pointer;
 	&:hover {
 		background: $primary-dark;
+	}
+	&:focus {
+		outline: none;
 	}
 }
 
@@ -486,9 +491,56 @@ a {
 	}
 }
 
+.btn-list {
+	border-radius: 20px 0 0 20px;
+	margin-right: 0;
+	margin-left: 1rem;
+	transition: all 0.2s ease-in;
+	padding: 0.4rem 0.8rem;
+}
+
+.btn-list {
+	&-left {
+		@extend .btn-list;
+	}
+	&-right {
+		@extend .btn-list;
+		background: #444;
+		color: #aaa;
+		&:hover {
+			background: #333;
+		}
+	}
+}
+
+.btn-poster {
+	border-radius: 0 20px 20px 0;
+	margin-left: 0;
+	transition: all 0.2s ease-in;
+	padding: 0.4rem 0.8rem;
+}
+
+.btn-poster {
+	&-left {
+		@extend .btn-poster;
+		background: #444;
+		color: #aaa;
+		&:hover {
+			background: #333;
+		}
+	}
+	&-right {
+		@extend .btn-poster;
+	}
+}
+
 .x {
 	position: relative;
 	top: -0.2rem;
+}
+
+.view-btns {
+	margin-top: 0rem;
 }
 
 .footer {
@@ -532,6 +584,13 @@ a {
 		color: #fff;
 		// transform: scale(1.05);
 	}
+}
+
+input[type='checkbox'] {
+	background: green;
+}
+input[type='checkbox']:checked {
+	background: $primary;
 }
 
 @import 'media';

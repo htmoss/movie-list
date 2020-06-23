@@ -383,7 +383,8 @@ a {
   margin: 1rem 0;
 }
 
-.search-results {
+.search-results,
+.rating-poster-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 4rem;
@@ -462,10 +463,15 @@ a {
   transition: all 0.1s ease;
   padding: 0.8rem 2rem;
   margin: 0.2rem;
+  cursor: pointer;
 }
 
 .btn:hover {
   background: #bb242c;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .btn-clear {
@@ -501,9 +507,46 @@ a {
   transform: scale(1.1);
 }
 
+.btn-list, .btn-list-left, .btn-list-right {
+  border-radius: 20px 0 0 20px;
+  margin-right: 0;
+  margin-left: 1rem;
+  transition: all 0.2s ease-in;
+  padding: 0.4rem 0.8rem;
+}
+
+.btn-list-right {
+  background: #444;
+  color: #aaa;
+}
+
+.btn-list-right:hover {
+  background: #333;
+}
+
+.btn-poster, .btn-poster-left, .btn-poster-right {
+  border-radius: 0 20px 20px 0;
+  margin-left: 0;
+  transition: all 0.2s ease-in;
+  padding: 0.4rem 0.8rem;
+}
+
+.btn-poster-left {
+  background: #444;
+  color: #aaa;
+}
+
+.btn-poster-left:hover {
+  background: #333;
+}
+
 .x {
   position: relative;
   top: -0.2rem;
+}
+
+.view-btns {
+  margin-top: 0rem;
 }
 
 .footer {
@@ -549,12 +592,21 @@ a {
   color: #fff;
 }
 
+input[type='checkbox'] {
+  background: green;
+}
+
+input[type='checkbox']:checked {
+  background: #fb363f;
+}
+
 @media (max-width: 1200px) {
   .search-item {
     width: 231px;
     height: 350px;
   }
-  .search-results {
+  .search-results,
+  .rating-poster-list {
     gap: 2rem 4rem;
   }
   .search-box-shadow {
@@ -569,7 +621,8 @@ a {
 }
 
 @media (max-width: 950px) {
-  .search-results {
+  .search-results,
+  .rating-poster-list {
     grid-template-columns: repeat(2, 1fr);
   }
   .search-title {
@@ -579,7 +632,8 @@ a {
 }
 
 @media (max-width: 650px) {
-  .search-results {
+  .search-results,
+  .rating-poster-list {
     grid-template-columns: repeat(1, 1fr);
   }
   .search-title {
@@ -633,6 +687,15 @@ a {
     margin: 0;
     margin-top: 3rem;
     text-align: center;
+  }
+  .view-btns {
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-poster, .btn-poster-left, .btn-poster-right, .btn-list, .btn-list-left, .btn-list-right {
+    margin: 0;
   }
   .popup {
     width: 250px;

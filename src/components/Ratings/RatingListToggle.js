@@ -1,23 +1,27 @@
 import React, { useContext } from 'react';
 import { PosterToggleContext } from '../../context/PosterToggleContext';
 
+let theme = 'left';
+
 const RatingListToggle = () => {
 	const { showPosters, setShowPosters } = useContext(PosterToggleContext);
 
-	const onChange = (e) => {
-		setShowPosters(e.target.checked);
+	const onClick = (e) => {
+		setShowPosters(!showPosters);
+		if (showPosters) {
+			theme = 'left';
+		} else {
+			theme = 'right';
+		}
 	};
 	return (
-		<div>
-			<form>
-				<label htmlFor='rating-poster-toggle'>Poster Mode</label>
-				<input
-					type='checkbox'
-					name='rating-poster-toggle'
-					checked={showPosters}
-					onChange={onChange}
-				/>
-			</form>
+		<div className='view-btns'>
+			<button className={`btn btn-list-${theme}`} onClick={onClick}>
+				List View
+			</button>
+			<button className={`btn btn-poster-${theme}`} onClick={onClick}>
+				Poster View
+			</button>
 		</div>
 	);
 };

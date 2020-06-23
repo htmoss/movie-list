@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { MovieContext } from '../../context/MovieContext';
-// import { BoxContext } from '../../context/BoxContext';
 import { v4 as uuidv4 } from 'uuid';
 
 const RateMovie = (movie) => {
