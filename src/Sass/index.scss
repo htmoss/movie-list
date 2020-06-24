@@ -477,6 +477,18 @@ a {
 	transform: scale(0);
 }
 
+.go-home {
+	margin-top: 1rem;
+	text-align: center;
+	Link {
+		font-style: bold;
+	}
+}
+
+.lead {
+	padding-left: 1rem;
+}
+
 .btn-info,
 .btn-back {
 	position: absolute;
@@ -497,6 +509,7 @@ a {
 	border-radius: 20px 0 0 20px;
 	margin-right: 0;
 	margin-left: 1rem;
+	margin-bottom: 1rem;
 	transition: all 0.2s ease-in;
 	padding: 0.4rem 0.8rem;
 }
@@ -520,6 +533,7 @@ a {
 	margin-left: 0;
 	transition: all 0.2s ease-in;
 	padding: 0.4rem 0.8rem;
+	margin-bottom: 1rem;
 }
 
 .btn-poster {
