@@ -5,8 +5,9 @@ const NotFound = ({ location }) => {
 	return (
 		<div>
 			<h1 className='page-title'>Page Not Found</h1>
+			<br />
 			<p className='lead'>
-				The page you are looking for <em>({location.pathname})</em> does not
+				The page you are looking for <em>{location.pathname}</em> does not
 				exist.
 			</p>
 			<br />

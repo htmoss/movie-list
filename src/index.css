@@ -91,10 +91,6 @@ a {
   transition: 0.1s all ease;
 }
 
-.about {
-  margin: 0 1rem;
-}
-
 .about h1,
 .about h2,
 .about h3,
@@ -606,6 +602,7 @@ a {
   margin: 3rem 0 0 1rem;
   font-family: 'Baloo Chettan 2', cursive;
   font-weight: 800;
+  line-height: 1;
 }
 
 .poster-score {
