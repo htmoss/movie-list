@@ -1,5 +1,6 @@
 $primary: #fb363f;
 $primary-dark: #bb242c;
+$primary-light: #ff6870;
 $unused-link: #9e9e9e;
 $secondary: #ffcfcf;
 $secondary-dark: #e4a1a1;
@@ -89,8 +90,34 @@ a {
 	}
 }
 
-.about p {
-	margin-left: 1rem;
+.about {
+	margin: 0 1rem;
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: 'Baloo Chettan 2', cursive;
+	}
+	h2 {
+		text-align: center;
+		padding: 1rem;
+		display: block;
+		background: $primary;
+	}
+
+	h3 {
+		// color: $primary-light;
+		margin-top: 1rem;
+	}
+
+	.page-title {
+		margin-left: 0rem;
+	}
+
+	.about-instructions {
+		padding: 1rem 0;
+	}
 }
 
 .movie-list,
