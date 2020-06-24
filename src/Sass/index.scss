@@ -374,9 +374,11 @@ a {
 }
 
 .search-title-and-item {
-	display: grid;
-	grid-template-rows: 1fr 6fr;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 }
+
 .search-title {
 	color: #f4f4f4;
 	display: flex;

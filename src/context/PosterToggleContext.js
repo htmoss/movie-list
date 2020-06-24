@@ -7,7 +7,7 @@ const PosterToggleContextProvider = (props) => {
 
 	const [showPosters, setShowPosters] = useState(() => {
 		const localData = localStorage.getItem('showPosters');
-		return localData ? JSON.parse(localData) : [];
+		return localData ? JSON.parse(localData) : false;
 	});
 
 	useEffect(() => {
