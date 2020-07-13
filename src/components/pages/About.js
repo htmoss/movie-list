@@ -23,6 +23,7 @@ const About = () => {
 			animate='visible'
 		>
 			<h1 className='page-title'>About</h1>
+			<br />
 			<p>Created by Henry Moss</p>
 			<p>Version 1.2.0</p>
 			<p>Created with React, HTML, CSS, SASS, & Framer Motion</p>
