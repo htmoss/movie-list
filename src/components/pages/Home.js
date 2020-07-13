@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import BoxContextProvider from '../../context/BoxContext';
 import Movielist from '../Movielist';
 import Inputmovie from '../Inputmovie';
