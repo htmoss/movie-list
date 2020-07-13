@@ -533,6 +533,7 @@ a {
 .btn-list {
 	border-radius: 20px 0 0 20px;
 	margin-right: 0;
+	margin-top: 0.8rem;
 	margin-left: 1rem;
 	margin-bottom: 1rem;
 	transition: all 0.2s ease-in;
@@ -613,11 +614,11 @@ a {
 }
 .poster-delete {
 	position: absolute;
-	bottom: 1rem;
-	right: 1rem;
+	bottom: 0.8rem;
+	right: 0.8rem;
 	z-index: 3;
 	background: #333;
-	padding: 0.8rem 0.9rem;
+	padding: 0.6rem 0.8rem;
 	border-radius: 30px;
 	transition: all 0.3s ease;
 	text-align: center;

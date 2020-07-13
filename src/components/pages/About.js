@@ -1,11 +1,31 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+	hidden: {
+		x: '100vw',
+	},
+	visible: {
+		x: 0,
+		transition: {
+			type: 'spring',
+			mass: 0.4,
+		},
+	},
+};
 
 const About = () => {
 	return (
-		<div className='about'>
+		<motion.div
+			className='about'
+			variants={containerVariants}
+			initial='hidden'
+			animate='visible'
+		>
 			<h1 className='page-title'>About</h1>
 			<p>Created by Henry Moss</p>
 			<p>Version 1.2.0</p>
+			<p>Created with React, HTML, CSS, SASS, & Framer Motion</p>
 			<div className='about-instructions'>
 				<h2>How does this work ?</h2>
 				<h3>1. List Movies</h3>
@@ -31,7 +51,7 @@ const About = () => {
 					my best to add new features when I can!
 				</p>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

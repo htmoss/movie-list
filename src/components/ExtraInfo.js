@@ -1,6 +1,20 @@
 import React, { useContext } from 'react';
 import { MovieContext } from '../context/MovieContext';
 import Poster_not_available from './poster_not_available.png';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			type: 'tween',
+			duration: 0.1,
+		},
+	},
+};
 
 const ExtraInfo = ({ extraInfo }) => {
 	const { setShowInfo, setIsGreyedOut, addButton } = useContext(MovieContext);
@@ -16,7 +30,7 @@ const ExtraInfo = ({ extraInfo }) => {
 	} = extraInfo;
 
 	return (
-		<div>
+		<motion.div variants={containerVariants} initial='hidden' animate='visible'>
 			<div className='popup'>
 				<div className='popup-top-info'>
 					<h1>
@@ -62,7 +76,7 @@ const ExtraInfo = ({ extraInfo }) => {
 					Add
 				</button>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

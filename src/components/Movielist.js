@@ -3,6 +3,20 @@ import { MovieContext } from '../context/MovieContext';
 import { BoxContext } from '../context/BoxContext';
 import MovieItem from './MovieItem';
 import { v4 as uuidv4 } from 'uuid';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			type: 'tween',
+			duration: 1,
+		},
+	},
+};
 
 const Movielist = () => {
 	const { movies, isGreyedOut, setRatings, ratings, deleteMovie } = useContext(
@@ -23,20 +37,9 @@ const Movielist = () => {
 	function isEmpty(obj) {
 		// null and undefined are "empty"
 		if (obj == null) return true;
-
-		// Assume if it has a length property with a non-zero value
-		// that that property is correct.
 		if (obj.length > 0) return false;
 		if (obj.length === 0) return true;
-
-		// If it isn't an object at this point
-		// it is empty, but it can't be anything *but* empty
-		// Is it empty?  Depends on your application.
 		if (typeof obj !== 'object') return true;
-
-		// Otherwise, does it have any properties of its own?
-		// Note that this doesn't handle
-		// toString and valueOf enumeration bugs in IE < 9
 		for (var key in obj) {
 			if (hasOwnProperty.call(obj, key)) return false;
 		}
@@ -46,11 +49,15 @@ const Movielist = () => {
 
 	return movies.length ? (
 		<div>
-			<div className={`grey-${isGreyedOut}`}></div>
-			<div>
+			<motion.div
+				variants={containerVariants}
+				initial='hidden'
+				animate='visible'
+			>
 				{isEmpty(showRateBox) === false && (
 					// Pop up box to rate the movie before it goes to rated list
 					<div>
+						<div className={`grey-${isGreyedOut}`}></div>
 						<div className='popup-rate-movie'>
 							<button
 								className='btn btn-back'
@@ -95,7 +102,7 @@ const Movielist = () => {
 						<div className='grey-out'></div>
 					</div>
 				)}
-			</div>
+			</motion.div>
 			<ul className='movie-list'>
 				{movies.map((movie) => {
 					return <MovieItem movie={movie} key={movie.id} />;
